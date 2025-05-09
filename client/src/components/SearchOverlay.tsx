@@ -115,34 +115,34 @@ export default function SearchOverlay() {
               <h3 className="text-foreground font-adventure text-lg mb-4">Popular Categories</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <Link href="/products/mens">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     Men's Collection
-                  </a>
+                  </div>
                 </Link>
                 <Link href="/products/womens">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     Women's Collection
-                  </a>
+                  </div>
                 </Link>
                 <Link href="/products/accessories">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     Accessories
-                  </a>
+                  </div>
                 </Link>
                 <Link href="/products/jackets">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     Jackets
-                  </a>
+                  </div>
                 </Link>
                 <Link href="/products/shirts">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     Shirts
-                  </a>
+                  </div>
                 </Link>
                 <Link href="/products/new-arrivals">
-                  <a className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors">
+                  <div className="bg-muted p-4 rounded-md text-center hover:bg-primary/10 transition-colors cursor-pointer">
                     New Arrivals
-                  </a>
+                  </div>
                 </Link>
               </div>
             </div>
@@ -172,8 +172,8 @@ export default function SearchOverlay() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {searchResults.map((product: Product) => (
                     <Link key={product.id} href={`/product/${product.id}`}>
-                      <a 
-                        className="flex items-center p-3 hover:bg-muted rounded-md transition-colors"
+                      <div 
+                        className="flex items-center p-3 hover:bg-muted rounded-md transition-colors cursor-pointer"
                         onClick={handleProductClick}
                       >
                         <div className="w-20 h-20 bg-muted rounded-md mr-4 overflow-hidden">
@@ -187,7 +187,7 @@ export default function SearchOverlay() {
                           <h4 className="text-foreground font-medium mb-1">{product.name}</h4>
                           <p className="text-primary font-medium">${product.price.toFixed(2)}</p>
                         </div>
-                      </a>
+                      </div>
                     </Link>
                   ))}
                 </div>

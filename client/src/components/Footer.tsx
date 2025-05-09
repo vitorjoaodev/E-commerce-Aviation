@@ -80,12 +80,15 @@ export default function Footer() {
         <div className="adventure-divider mx-auto w-full my-8"></div>
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm mb-4 md:mb-0">© 2023 Aviator Store. All rights reserved.</p>
-          <div className="flex space-x-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" className="h-8 w-auto" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard" className="h-8 w-auto" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay" className="h-8 w-auto" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal" className="h-8 w-auto" />
+          <div className="text-left">
+            <p className="text-muted-foreground text-sm mb-1">© 2023 Aviator Store. All rights reserved.</p>
+            <p className="text-muted-foreground text-xs">Developed by John Vitor Belasque</p>
+          </div>
+          <div className="flex space-x-4 items-center mt-4 md:mt-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-6 w-auto" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6 w-auto" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" className="h-6 w-auto" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-6 w-auto bg-white px-1 rounded" />
           </div>
         </div>
       </div>

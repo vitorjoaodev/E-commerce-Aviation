@@ -32,9 +32,9 @@ export default function Hero() {
           </p>
           <div className="flex gap-4">
             <Link href="/products">
-              <a className="bg-primary hover:bg-opacity-90 text-primary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg text-center">
+              <div className="bg-primary hover:bg-opacity-90 text-primary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg text-center cursor-pointer">
                 Explore Collection
-              </a>
+              </div>
             </Link>
           </div>
         </div>
