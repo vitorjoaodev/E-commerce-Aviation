@@ -5,19 +5,19 @@ export default function CategoryBanner() {
     {
       title: "Aviator Jackets",
       description: "Timeless designs crafted for adventure",
-      imageUrl: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      link: "/products/jackets"
+      imageUrl: "https://redcanoebrands.com/wp-content/uploads/2021/03/Womens-BOEING-flight-jacket.jpg",
+      link: "/products/womens"
     },
     {
       title: "Flight Apparel",
       description: "Functional designs with aviation heritage",
-      imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      link: "/products/apparel"
+      imageUrl: "https://redcanoebrands.com/wp-content/uploads/2022/05/M-LST-AVL-NY_front.jpg",
+      link: "/products/mens"
     },
     {
       title: "Travel Essentials",
       description: "Ready for any expedition",
-      imageUrl: "https://images.unsplash.com/photo-1507680434567-5739c80be1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-BOEING-TN_front.jpg",
       link: "/products/accessories"
     }
   ];
