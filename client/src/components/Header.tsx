@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCart } from "@/store/uiSlice";
+import { toggleCart, openSearch } from "@/store/uiSlice";
 import { RootState } from "@/store";
 import { Search, User, ShoppingBag, Menu } from "lucide-react";
 
@@ -70,7 +70,11 @@ export default function Header() {
 
           {/* Search, Account, Cart */}
           <div className="flex items-center space-x-4">
-            <button className="text-foreground hover:text-primary">
+            <button 
+              className="text-foreground hover:text-primary"
+              onClick={() => dispatch({ type: 'ui/toggleSearch', payload: true })}
+              aria-label="Open search"
+            >
               <Search className="h-6 w-6" />
             </button>
             <Link href="/account" className="text-foreground hover:text-primary">

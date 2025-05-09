@@ -79,6 +79,13 @@ export const uiSlice = createSlice({
   },
 });
 
+// Action creators to open/close specific UI elements directly
+export const openSearch = () => toggleSearch(true);
+export const closeSearch = () => toggleSearch(false);
+export const openCart = () => toggleCart(true);
+export const closeCart = () => toggleCart(false);
+export const closeExitPopup = () => showExitPopup(false);
+
 export const { 
   toggleCart, 
   showExitPopup, 
