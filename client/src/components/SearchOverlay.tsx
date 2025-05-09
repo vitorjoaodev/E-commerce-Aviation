@@ -5,8 +5,7 @@ import { toggleSearch } from '@/store/uiSlice';
 import { Search as SearchIcon, X, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useLocation } from 'wouter';
-import { apiRequest } from '@/lib/queryClient';
-import { Product } from '@shared/schema';
+import type { Product } from '@shared/schema';
 
 export default function SearchOverlay() {
   const { isSearchOpen } = useSelector((state: RootState) => state.ui);
@@ -51,7 +50,13 @@ export default function SearchOverlay() {
   // Search products API
   const { data: searchResults, isLoading } = useQuery({
     queryKey: ['/api/products/search', debouncedQuery],
-    queryFn: () => apiRequest<Product[]>(`/api/products?search=${debouncedQuery}`),
+    queryFn: async () => {
+      const response = await fetch(`/api/products?search=${debouncedQuery}`);
+      if (!response.ok) {
+        throw new Error('Failed to search products');
+      }
+      return response.json() as Promise<Product[]>;
+    },
     enabled: debouncedQuery.length > 2, // Only search when query is at least 3 characters
     staleTime: 60000 // 1 minute
   });
@@ -165,7 +170,7 @@ export default function SearchOverlay() {
               
               {!isLoading && searchResults && searchResults.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {searchResults.map((product) => (
+                  {searchResults.map((product: Product) => (
                     <Link key={product.id} href={`/product/${product.id}`}>
                       <a 
                         className="flex items-center p-3 hover:bg-muted rounded-md transition-colors"

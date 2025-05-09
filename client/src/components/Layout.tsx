@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CartDrawer from "./CartDrawer";
 import ExitPopup from "./ExitPopup";
+import SearchOverlay from "./SearchOverlay";
 import { useDispatch } from "react-redux";
 import { showExitPopup } from "@/store/uiSlice";
 
@@ -41,6 +42,7 @@ export default function Layout({ children }: LayoutProps) {
       <Footer />
       <CartDrawer />
       <ExitPopup />
+      <SearchOverlay />
     </div>
   );
 }

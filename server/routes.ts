@@ -15,7 +15,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/products", async (req, res) => {
     try {
       const category = req.query.category as string | undefined;
+      const search = req.query.search as string | undefined;
+      
+      // Get all products first
       const products = await storage.getProducts(category);
+      
+      // If search parameter is provided, filter products
+      if (search && search.trim() !== '') {
+        const searchTerm = search.toLowerCase();
+        const filteredProducts = products.filter(product => 
+          product.name.toLowerCase().includes(searchTerm) || 
+          product.description.toLowerCase().includes(searchTerm) ||
+          (product.category && product.category.toLowerCase().includes(searchTerm))
+        );
+        return res.json(filteredProducts);
+      }
+      
       res.json(products);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch products" });
