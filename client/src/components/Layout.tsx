@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import CartDrawer from "./CartDrawer";
 import ExitPopup from "./ExitPopup";
 import SearchOverlay from "./SearchOverlay";
+import AudioPlayer from "./AudioPlayer";
 import { useDispatch } from "react-redux";
 import { showExitPopup } from "@/store/uiSlice";
 import { useLocation } from "wouter";
@@ -50,6 +51,7 @@ export default function Layout({ children }: LayoutProps) {
       <CartDrawer />
       <ExitPopup />
       <SearchOverlay />
+      <AudioPlayer />
     </div>
   );
 }
