@@ -15,8 +15,8 @@ export default function About() {
           <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-black via-transparent to-black"></div>
           <img 
             className="w-full h-full object-cover" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-sTa4jfNJfInGHBd4oO0yaz5hLVj8GCO8Q&s" 
-            alt="Historical aviation photograph" 
+            src="https://d63oxfkn1m8sf.cloudfront.net/7617/1653/8046/A_Airfix_Aerodrome_marks_the_debut_Old_Warden_airfield_appearence_of_the_worlds_only_airworthy_Hawker_Fury_fighter_at_this_years_Shuttleworth_Best_of_British_Airshow.jpg" 
+            alt="Old Warden airfield with vintage aircraft" 
           />
         </div>
 

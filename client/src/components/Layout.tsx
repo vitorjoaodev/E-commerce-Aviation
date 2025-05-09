@@ -6,6 +6,7 @@ import ExitPopup from "./ExitPopup";
 import SearchOverlay from "./SearchOverlay";
 import { useDispatch } from "react-redux";
 import { showExitPopup } from "@/store/uiSlice";
+import { useLocation } from "wouter";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,12 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const dispatch = useDispatch();
+  const [location] = useLocation();
+
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     // Track mouse movement for exit intent popup
