@@ -60,8 +60,8 @@ export default function Header() {
             <Link href="/products/accessories" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/accessories') ? 'text-primary' : ''}`}>
               Accessories
             </Link>
-            <Link href="/products/collections" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/collections') ? 'text-primary' : ''}`}>
-              Collections
+            <Link href="/products/hats" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/hats') ? 'text-primary' : ''}`}>
+              Hats
             </Link>
             <Link href="/about" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location === '/about' ? 'text-primary' : ''}`}>
               About
@@ -114,8 +114,8 @@ export default function Header() {
             <Link href="/products/accessories" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
               Accessories
             </Link>
-            <Link href="/products/collections" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              Collections
+            <Link href="/products/hats" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
+              Hats
             </Link>
             <Link href="/about" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
               About
