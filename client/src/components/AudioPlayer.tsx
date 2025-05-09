@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Volume2, VolumeX, Play, Pause } from "lucide-react";
 import { useLocation } from "wouter";
 
-// Mapeamento de caminhos para diferentes trilhas sonoras
+// Mapeamento de caminhos para diferentes trilhas sonoras no estilo Indiana Jones/aventura
 const pathToSoundtrack: Record<string, string> = {
-  "/": "https://assets.mixkit.co/music/preview/mixkit-adventure-kid-story-135.mp3", // Home
-  "/products/mens": "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3", // Men's
-  "/products/womens": "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3", // Women's
-  "/products/accessories": "https://assets.mixkit.co/music/preview/mixkit-summer-fun-13.mp3", // Accessories
-  "/products/collections": "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3", // Collections
-  "/about": "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // About
+  "/": "https://assets.mixkit.co/music/preview/mixkit-epical-drums-01-681.mp3", // Home - Tambores épicos
+  "/products/mens": "https://assets.mixkit.co/music/preview/mixkit-adventure-ending-2307.mp3", // Men's - Tema inspirador de aventura
+  "/products/womens": "https://assets.mixkit.co/music/preview/mixkit-african-safari-178.mp3", // Women's - Tema safari/aventura
+  "/products/accessories": "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Accessories - Tesouro escondido
+  "/products/collections": "https://assets.mixkit.co/music/preview/mixkit-mysterious-forest-671.mp3", // Collections - Mistério da floresta
+  "/about": "https://assets.mixkit.co/music/preview/mixkit-explorer-mode-2774.mp3", // About - Modo explorador
 };
 
 export default function AudioPlayer() {
@@ -135,25 +135,25 @@ export default function AudioPlayer() {
   const getTrackName = () => {
     switch(location) {
       case '/':
-        return "Aventura";
+        return "Tambores Épicos";
       case '/products/mens':
-        return "Explorador";
+        return "Tema de Aventura";
       case '/products/womens':
-        return "Descoberta";
+        return "Safari Africano";
       case '/products/accessories':
-        return "Verão";
+        return "Tesouro Escondido";
       case '/products/collections':
-        return "Altitude";
+        return "Floresta Misteriosa";
       case '/about':
-        return "Serenidade";
+        return "Modo Explorador";
       default:
         // Verificar se começa com alguma rota específica
-        if (location.startsWith('/products/mens')) return "Explorador";
-        if (location.startsWith('/products/womens')) return "Descoberta";
-        if (location.startsWith('/products/accessories')) return "Verão";
-        if (location.startsWith('/products/collections')) return "Altitude";
-        if (location.startsWith('/about')) return "Serenidade";
-        return "Aventura";
+        if (location.startsWith('/products/mens')) return "Tema de Aventura";
+        if (location.startsWith('/products/womens')) return "Safari Africano";
+        if (location.startsWith('/products/accessories')) return "Tesouro Escondido";
+        if (location.startsWith('/products/collections')) return "Floresta Misteriosa";
+        if (location.startsWith('/about')) return "Modo Explorador";
+        return "Tambores Épicos";
     }
   };
   
