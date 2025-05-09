@@ -34,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/product/${product.id}`}>
-      <a className="product-card relative group bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 block">
+      <div className="product-card relative group bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 block cursor-pointer">
         <div 
           className="aspect-[3/4] overflow-hidden"
           onMouseEnter={() => setIsHovering(true)}
@@ -64,7 +64,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </button>
           </div>
         </div>
-      </a>
+      </div>
     </Link>
   );
 }

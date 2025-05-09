@@ -27,9 +27,9 @@ export default function CategoryCard({ title, description, imageUrl, link }: Cat
         <h3 className="text-xl font-adventure text-primary mb-2">{title}</h3>
         <p className="text-foreground mb-4 text-sm">{description}</p>
         <Link href={link}>
-          <a className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-black px-4 py-2 text-sm uppercase tracking-wider font-adventure transition-colors duration-300">
+          <span className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-black px-4 py-2 text-sm uppercase tracking-wider font-adventure transition-colors duration-300 cursor-pointer">
             Explore
-          </a>
+          </span>
         </Link>
       </div>
     </div>

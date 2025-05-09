@@ -98,6 +98,17 @@ export class MemStorage implements IStorage {
     const products = Array.from(this.products.values());
     
     if (category) {
+      // Caso específico para categoria 'mens': apenas os 6 produtos específicos
+      if (category === 'mens') {
+        // IDs dos produtos específicos masculinos (1-6)
+        const specificMensProductIds = [1, 2, 3, 4, 5, 6];
+        return products.filter(product => 
+          product.category === category && 
+          specificMensProductIds.includes(product.id)
+        );
+      }
+      
+      // Para as demais categorias, filtro normal
       return products.filter(product => product.category === category);
     }
     
