@@ -3,19 +3,29 @@ import { Check } from "lucide-react";
 
 export default function FeaturedCollection() {
   return (
-    <section className="py-16 bg-card">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 overflow-hidden">
+      {/* Background video */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <img 
+          src="https://i.ytimg.com/vi/BKaQBV-xEcU/mqdefault.jpg?sqp=-oaymwEFCJQBEFM&rs=AMzJL3mbuAMG8HSDf3iwky1FPdj7LEZing" 
+          alt="Airplane video thumbnail" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 mb-8 md:mb-0 md:pr-12">
             <h2 className="text-3xl md:text-4xl font-adventure text-primary mb-4">
               Explorer Collection
             </h2>
             <div className="adventure-divider w-40 my-4"></div>
-            <p className="text-foreground mb-6">
+            <p className="text-white mb-6">
               Designed for modern adventurers who embrace the spirit of exploration. 
               Each piece combines historical aviation elements with contemporary functionality.
             </p>
-            <ul className="space-y-3 mb-8 text-foreground">
+            <ul className="space-y-3 mb-8 text-white">
               <li className="flex items-center">
                 <Check className="h-5 w-5 text-primary mr-2" />
                 Premium materials built to last

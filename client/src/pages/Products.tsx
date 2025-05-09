@@ -95,9 +95,38 @@ export default function Products() {
         <meta name="description" content={`Explore our ${getPageTitle().toLowerCase()} of aviation-inspired clothing. High-quality aviation apparel made for adventure.`} />
       </Helmet>
       
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-3xl md:text-4xl font-adventure text-primary mb-2">{getPageTitle()}</h1>
-        <div className="adventure-divider w-40 my-4"></div>
+      {/* Category Banner with background image */}
+      <div className="relative h-[300px] mb-10">
+        <div className="absolute inset-0 bg-black">
+          <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-black via-transparent to-black"></div>
+          <img 
+            className="w-full h-full object-cover" 
+            src={
+              category === "mens" 
+                ? "https://redcanoebrands.com/wp-content/uploads/2024/08/2024_MEN-BANNER-1.jpg"
+                : category === "womens"
+                ? "https://redcanoebrands.com/wp-content/uploads/2021/03/Womens-category-banner.jpg"
+                : category === "accessories"
+                ? "https://www.atr-aircraft.com/wp-content/uploads/2023/07/ATR-110237_MD.jpg"
+                : category === "hats"
+                ? "https://redcanoebrands.com/wp-content/uploads/2024/08/2024_CAPS-BANNEr-1.jpg"
+                : "https://redcanoebrands.com/wp-content/uploads/2024/08/2024_MEN-BANNER-1.jpg"
+            } 
+            alt={`${getPageTitle()} banner`} 
+          />
+        </div>
+
+        <div className="relative h-full flex items-center px-4 md:px-10">
+          <div className="max-w-xl">
+            <h1 className="text-4xl md:text-6xl text-primary mb-4 font-adventure leading-tight">
+              {getPageTitle()}
+            </h1>
+            <div className="adventure-divider w-40 my-4"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-6">
         
         {/* Search and Filter Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center my-8 space-y-4 md:space-y-0">

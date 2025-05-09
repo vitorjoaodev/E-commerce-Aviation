@@ -95,9 +95,15 @@ export default function ExitPopup() {
         <div className="relative max-w-3xl w-full mx-4 bg-card rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row">
           {/* Left side - Image/Design area */}
           <div className="w-full md:w-5/12 bg-primary relative p-6 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70">
+            <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-primary/70 z-10"></div>
+              <img 
+                src="https://theaviationgeekclub.com/wp-content/uploads/2021/05/Concorde-1.jpg" 
+                alt="Concorde aircraft" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               {/* Decorative elements - Compass lines */}
-              <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 opacity-10 z-20">
                 <div className="absolute top-1/2 left-1/2 w-[200%] h-0.5 bg-white" style={{ transform: 'translate(-50%, -50%) rotate(45deg)' }}></div>
                 <div className="absolute top-1/2 left-1/2 w-[200%] h-0.5 bg-white" style={{ transform: 'translate(-50%, -50%) rotate(90deg)' }}></div>
                 <div className="absolute top-1/2 left-1/2 w-[200%] h-0.5 bg-white" style={{ transform: 'translate(-50%, -50%) rotate(135deg)' }}></div>
