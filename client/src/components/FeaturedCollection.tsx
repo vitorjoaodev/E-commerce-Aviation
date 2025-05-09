@@ -4,12 +4,12 @@ import { Check } from "lucide-react";
 export default function FeaturedCollection() {
   return (
     <section className="relative py-16 overflow-hidden">
-      {/* Background video */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <img 
-          src="https://i.ytimg.com/vi/BKaQBV-xEcU/mqdefault.jpg?sqp=-oaymwEFCJQBEFM&rs=AMzJL3mbuAMG8HSDf3iwky1FPdj7LEZing" 
-          alt="Airplane video thumbnail" 
+          src="https://www.flyingmag.com/wp-content/uploads/sites/6/2022/11/0918_FLYING_Bahamas_Cessna_PR.jpg" 
+          alt="Vintage airplane flying over ocean" 
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
@@ -40,9 +40,9 @@ export default function FeaturedCollection() {
               </li>
             </ul>
             <Link href="/products/collections/explorer">
-              <a className="inline-block bg-primary hover:bg-opacity-90 text-primary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <span className="inline-block bg-primary hover:bg-opacity-90 text-primary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer">
                 Explore Collection
-              </a>
+              </span>
             </Link>
           </div>
           
@@ -59,9 +59,9 @@ export default function FeaturedCollection() {
                 <h3 className="text-xl font-adventure text-primary mb-2">Explorer Jacket</h3>
                 <p className="text-foreground mb-3 text-sm">$349.00</p>
                 <Link href="/product/explorer-jacket">
-                  <a className="text-sm border-b border-primary text-primary hover:border-white hover:text-white transition-colors duration-300">
+                  <span className="text-sm border-b border-primary text-primary hover:border-white hover:text-white transition-colors duration-300 cursor-pointer">
                     View Details
-                  </a>
+                  </span>
                 </Link>
               </div>
             </div>
@@ -78,9 +78,9 @@ export default function FeaturedCollection() {
                 <h3 className="text-xl font-adventure text-primary mb-2">Expedition Jumpsuit</h3>
                 <p className="text-foreground mb-3 text-sm">$189.00</p>
                 <Link href="/product/expedition-jumpsuit">
-                  <a className="text-sm border-b border-primary text-primary hover:border-white hover:text-white transition-colors duration-300">
+                  <span className="text-sm border-b border-primary text-primary hover:border-white hover:text-white transition-colors duration-300 cursor-pointer">
                     View Details
-                  </a>
+                  </span>
                 </Link>
               </div>
             </div>
