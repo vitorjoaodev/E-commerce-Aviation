@@ -30,15 +30,10 @@ export default function Hero() {
             Discover our collection of aviation-inspired clothing for the modern explorer. 
             Designed for those who seek adventure.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/products/mens">
+          <div className="flex gap-4">
+            <Link href="/products">
               <a className="bg-primary hover:bg-opacity-90 text-primary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg text-center">
-                Shop Men
-              </a>
-            </Link>
-            <Link href="/products/womens">
-              <a className="bg-secondary hover:bg-opacity-90 text-secondary-foreground py-3 px-8 rounded font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg text-center">
-                Shop Women
+                Explore Collection
               </a>
             </Link>
           </div>

@@ -8,12 +8,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <div className="relative w-10 h-10 mr-2 border-2 border-primary rounded-full flex items-center justify-center">
-                <div className="w-5 h-5 bg-primary rounded-full"></div>
-                <div className="absolute top-1/2 left-1/2 w-6 h-0.5 bg-primary" style={{ transform: 'translate(-50%, -50%) rotate(45deg)' }}></div>
-                <div className="absolute top-1/2 left-1/2 w-6 h-0.5 bg-primary" style={{ transform: 'translate(-50%, -50%) rotate(135deg)' }}></div>
+              <div className="relative w-12 h-12 mr-2 border-2 border-primary rounded-full flex items-center justify-center overflow-hidden">
+                {/* Compass face */}
+                <div className="absolute inset-0 bg-card"></div>
+                
+                {/* Compass ring with markings */}
+                <div className="absolute inset-0 border-4 border-primary rounded-full"></div>
+                
+                {/* North marker */}
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-accent"></div>
+                
+                {/* Compass needle */}
+                <div className="absolute top-1/2 left-1/2 w-8 h-1 bg-primary origin-center animate-[compass-spin_8s_linear_infinite]" 
+                     style={{ transform: 'translate(-50%, -50%)' }}>
+                  <div className="absolute right-0 w-4 h-1 bg-accent"></div>
+                </div>
+                
+                {/* Central pivot */}
+                <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
               </div>
-              <span className="text-xl font-adventure text-primary">AviatorX</span>
+              <span className="text-xl font-adventure text-primary">Aviator Store</span>
             </div>
             <p className="text-muted-foreground mb-6">Aviation-inspired clothing for modern adventurers who embrace the spirit of exploration and discovery.</p>
             <div className="flex space-x-4">
@@ -66,7 +80,7 @@ export default function Footer() {
         <div className="adventure-divider mx-auto w-full my-8"></div>
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm mb-4 md:mb-0">© 2023 AviatorX. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm mb-4 md:mb-0">© 2023 Aviator Store. All rights reserved.</p>
           <div className="flex space-x-4">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" className="h-8 w-auto" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard" className="h-8 w-auto" />
