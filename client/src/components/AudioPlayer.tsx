@@ -2,13 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Volume2, VolumeX, Play, Pause } from "lucide-react";
 import { useLocation } from "wouter";
 
+// Trilha sonora no estilo Indiana Jones / Jurassic Park
 const pathToSoundtrack: Record<string, string> = {
-  "/": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Lobo_Loco/Adventure/Lobo_Loco_-_Traveling_to_Louisiana_Soft_Delay_ID_1174.mp3",
-  "/products/mens": "https://assets.mixkit.co/music/preview/mixkit-adventure-ending-2307.mp3",
-  "/products/womens": "https://assets.mixkit.co/music/preview/mixkit-african-safari-178.mp3",
-  "/products/accessories": "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
-  "/products/collections": "https://assets.mixkit.co/music/preview/mixkit-mysterious-forest-671.mp3",
-  "/about": "https://assets.mixkit.co/music/preview/mixkit-explorer-mode-2774.mp3",
+  "/": "https://audio-previews.elements.envatousercontent.com/files/181606169/preview.mp3", // Epic Adventure
+  "/products/mens": "https://audio-previews.elements.envatousercontent.com/files/154493327/preview.mp3", // Jungle Adventure
+  "/products/womens": "https://audio-previews.elements.envatousercontent.com/files/150655208/preview.mp3", // Epic Journey
+  "/products/accessories": "https://audio-previews.elements.envatousercontent.com/files/275102330/preview.mp3", // Exploration
+  "/products/collections": "https://audio-previews.elements.envatousercontent.com/files/107730279/preview.mp3", // Adventure Soundtrack
+  "/about": "https://audio-previews.elements.envatousercontent.com/files/303064255/preview.mp3", // Cinematic Adventure
 };
 
 export default function AudioPlayer() {
@@ -25,9 +26,11 @@ export default function AudioPlayer() {
   const [currentTrack, setCurrentTrack] = useState("");
 
   useEffect(() => {
+    // Determina qual faixa deve ser tocada com base na localização atual
     let trackToPlay = pathToSoundtrack[location];
 
     if (!trackToPlay) {
+      // Procura por caminhos que correspondam ao início da localização atual
       for (const [path, track] of Object.entries(pathToSoundtrack)) {
         if (location.startsWith(path) && path !== "/") {
           trackToPlay = track;
@@ -35,49 +38,87 @@ export default function AudioPlayer() {
         }
       }
 
+      // Se nenhuma correspondência for encontrada, use a faixa padrão
       if (!trackToPlay) {
         trackToPlay = pathToSoundtrack["/"];
       }
     }
 
+    // Só atualiza se a faixa for diferente da atual
     if (trackToPlay !== currentTrack) {
       setCurrentTrack(trackToPlay);
-
-      if (isPlaying && audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = trackToPlay;
-        audioRef.current.load();
-        audioRef.current.play().catch(error => {
-          console.error("Erro ao reproduzir áudio:", error);
-        });
-      }
     }
-  }, [location, isPlaying, currentTrack]);
+  }, [location, currentTrack]);
 
   useEffect(() => {
-    audioRef.current = new Audio(currentTrack);
-    audioRef.current.volume = volume;
-    audioRef.current.loop = true;
+    // Só cria uma nova instância de áudio se ainda não existir
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      audioRef.current.loop = true;
+      audioRef.current.volume = isMuted ? 0 : volume;
+    }
+    
+    // Atualiza a faixa atual
+    if (currentTrack) {
+      audioRef.current.src = currentTrack;
+      audioRef.current.load();
+      
+      // Só tenta tocar se o estado for "playing"
+      if (isPlaying) {
+        const playPromise = audioRef.current.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.error("Erro ao reproduzir áudio:", error);
+            // Não altere o estado isPlaying aqui para permitir que o usuário tente novamente
+          });
+        }
+      }
+    }
 
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.src = "";
       }
     };
-  }, [currentTrack]);
+  }, [currentTrack, isPlaying, volume, isMuted]);
 
+  // Controle de play/pause
   useEffect(() => {
     if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.play().catch(error => {
-        console.error("Erro ao reproduzir áudio:", error);
-        setIsPlaying(false);
-      });
-    } else {
-      audioRef.current.pause();
-    }
+    
+    const handlePlay = () => {
+      if (isPlaying) {
+        // Usa uma Promise para tratar erros corretamente
+        const playPromise = audioRef.current?.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.error("Erro ao reproduzir áudio:", error);
+            // Não alteramos o estado aqui para permitir que o usuário tente novamente
+            // com um clique no botão de play
+          });
+        }
+      } else {
+        audioRef.current?.pause();
+      }
+    };
+    
+    handlePlay();
+    
+    // Adiciona um event listener para permitir que o usuário inicie a reprodução
+    // após interação com a página (requisito dos navegadores modernos)
+    const handleUserInteraction = () => {
+      if (isPlaying && audioRef.current?.paused) {
+        handlePlay();
+      }
+    };
+    
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    
+    return () => {
+      document.removeEventListener('click', handleUserInteraction);
+    };
   }, [isPlaying]);
 
   useEffect(() => {
@@ -119,24 +160,24 @@ export default function AudioPlayer() {
   const getTrackName = () => {
     switch (location) {
       case '/':
-        return "Viagem à Louisiana";
+        return "Aventura Épica";
       case '/products/mens':
-        return "Tema de Aventura";
+        return "Aventura na Selva";
       case '/products/womens':
-        return "Safari Africano";
+        return "Jornada Épica";
       case '/products/accessories':
-        return "Tesouro Escondido";
+        return "Exploração";
       case '/products/collections':
-        return "Floresta Misteriosa";
+        return "Trilha de Aventura";
       case '/about':
-        return "Modo Explorador";
+        return "Aventura Cinematográfica";
       default:
-        if (location.startsWith('/products/mens')) return "Tema de Aventura";
-        if (location.startsWith('/products/womens')) return "Safari Africano";
-        if (location.startsWith('/products/accessories')) return "Tesouro Escondido";
-        if (location.startsWith('/products/collections')) return "Floresta Misteriosa";
-        if (location.startsWith('/about')) return "Modo Explorador";
-        return "Viagem à Louisiana";
+        if (location.startsWith('/products/mens')) return "Aventura na Selva";
+        if (location.startsWith('/products/womens')) return "Jornada Épica";
+        if (location.startsWith('/products/accessories')) return "Exploração";
+        if (location.startsWith('/products/collections')) return "Trilha de Aventura";
+        if (location.startsWith('/about')) return "Aventura Cinematográfica";
+        return "Aventura Épica";
     }
   };
 

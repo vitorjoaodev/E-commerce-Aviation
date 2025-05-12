@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import CategoryBanner from "@/components/CategoryBanner";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HeritageBanner from "@/components/HeritageBanner";
-import FeaturedCollection from "@/components/FeaturedCollection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import { Helmet } from "react-helmet";
@@ -19,7 +18,6 @@ export default function Home() {
       <CategoryBanner />
       <FeaturedProducts />
       <HeritageBanner />
-      <FeaturedCollection />
       <Testimonials />
       <Newsletter />
     </>
