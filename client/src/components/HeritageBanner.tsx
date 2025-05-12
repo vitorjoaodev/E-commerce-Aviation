@@ -6,7 +6,7 @@ export default function HeritageBanner() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img 
-          src="https://pixabay.com/get/g2a6a3ea318c44e7e5d7fbb0a40b1815f2addd190ea948ebb3d6ce447b6778b30ee6d51d2c2bef62af92a1541dae08a35088dd1d1a445db23173f7cda283ece48_1280.jpg" 
+          src="https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
           alt="Vintage biplane against blue sky" 
           className="w-full h-full object-cover" 
         />

@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-black via-transparent to-black"></div>
         <img 
           className="w-full h-full object-cover" 
-          src="https://pixabay.com/get/g33886ea4dde1681c2a4989bacb0a7dedc73a921e0d06a3263657b3cd6c1b2f5aea753c024a5cd38f4d69e7618c713bce03e55fdeb258c5cf5fbae9c5196e6ec0_1280.jpg" 
+          src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
           alt="Vintage aircraft flying over mountains" 
         />
       </div>
