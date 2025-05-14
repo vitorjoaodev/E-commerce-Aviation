@@ -1,6 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
+import { registerAWSRoutes } from "./aws-routes";
 import { setupVite, serveStatic, log } from "./vite";
+import fileUpload from "express-fileupload";
 
 const app = express();
 app.use(express.json());
