@@ -7,6 +7,10 @@ import fileUpload from "express-fileupload";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(fileUpload({
+  createParentPath: true,
+  limits: { fileSize: 50 * 1024 * 1024 } // limite de 50MB
+}));
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -39,7 +43,11 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Registra as rotas de API padrão
   const server = await registerRoutes(app);
+  
+  // Registra as rotas relacionadas aos serviços AWS
+  registerAWSRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
