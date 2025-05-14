@@ -98,13 +98,39 @@ export class MemStorage implements IStorage {
     const products = Array.from(this.products.values());
     
     if (category) {
-      // Caso específico para categoria 'mens': apenas os 6 produtos específicos
+      // Produtos específicos para a categoria 'mens' - 6 produtos conforme solicitado
       if (category === 'mens') {
-        // IDs dos produtos específicos masculinos (1-6)
+        // Avro Lancaster Long Sleeve T-Shirt, Boeing Flight Cardigan, Boeing T-shirt, 
+        // Avro Lancaster T-shirt, B17 Long Sleeve T-shirt, Beechcraft T-shirt
         const specificMensProductIds = [1, 2, 3, 4, 5, 6];
         return products.filter(product => 
-          product.category === category && 
           specificMensProductIds.includes(product.id)
+        );
+      }
+      
+      // Produtos específicos para a categoria 'womens' - 5 produtos conforme solicitado
+      if (category === 'womens') {
+        // Boeing Flight Jacket, Boeing T-shirt, B17 T-shirt, RCAF 100 Long/Short Sleeve T-Shirts
+        const specificWomensProductIds = [7, 8, 9, 10, 11];
+        return products.filter(product => 
+          specificWomensProductIds.includes(product.id)
+        );
+      }
+      
+      // Produtos específicos para a categoria 'accessories'
+      if (category === 'accessories') {
+        const accessoriesProductIds = [12, 13, 14, 15, 16];
+        return products.filter(product => 
+          accessoriesProductIds.includes(product.id)
+        );
+      }
+      
+      // Produtos específicos para a categoria 'hats'
+      if (category === 'hats') {
+        // Os chapéus são uma subcategoria de acessórios
+        const hatsProductIds = [13, 14, 15];
+        return products.filter(product => 
+          hatsProductIds.includes(product.id)
         );
       }
       
