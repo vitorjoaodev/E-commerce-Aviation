@@ -1,0 +1,117 @@
+{
+  "header": {
+    "home": "Home",
+    "products": "Products",
+    "mens": "Men's",
+    "womens": "Women's",
+    "accessories": "Accessories",
+    "blog": "Blog",
+    "about": "About",
+    "account": "My Account",
+    "cart": "Cart",
+    "search": "Search"
+  },
+  "hero": {
+    "title": "Adventure Awaits Above The Clouds",
+    "subtitle": "Discover our exclusive collection of aviation-inspired clothing",
+    "cta": "Shop Now"
+  },
+  "featured": {
+    "title": "Featured Products",
+    "viewAll": "View All"
+  },
+  "categories": {
+    "title": "Categories",
+    "mens": "Men's",
+    "womens": "Women's",
+    "accessories": "Accessories"
+  },
+  "heritage": {
+    "title": "Our Aviation Heritage",
+    "subtitle": "Inspired by aviation pioneers and the spirit of adventure",
+    "paragraph1": "Our brand is rooted in the rich history of aviation. Each piece is designed with attention to detail that pays homage to legendary aircraft and the intrepid adventurers who blazed trails across the skies.",
+    "paragraph2": "From the classic Avro Lancaster to the impressive Boeing 747, our clothing tells stories of innovation, courage, and exploration.",
+    "learnMore": "Learn More"
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "subtitle": "Be the first to know about new products, exclusive offers, and inspiring aviation stories",
+    "placeholder": "Your email address",
+    "button": "Subscribe",
+    "success": "Thank you for subscribing!",
+    "error": "An error occurred. Please try again."
+  },
+  "instagram": {
+    "title": "Follow Us on Instagram",
+    "subtitle": "For daily inspiration and the latest news",
+    "followUs": "Follow @aviatorstore"
+  },
+  "footer": {
+    "navTitle": "Navigation",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "faqs": "FAQs",
+    "legal": "Legal Information",
+    "termsConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "developed": "Developed by John Vitor Belasque",
+    "copyright": "© 2024 Aviator Store. All rights reserved."
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "selectSize": "Select Size",
+    "selectColor": "Select Color",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "description": "Description",
+    "details": "Details",
+    "materialsCare": "Materials & Care",
+    "relatedProducts": "Related Products"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "remove": "Remove"
+  },
+  "blog": {
+    "recentPosts": "Recent Posts",
+    "readMore": "Read More",
+    "categories": "Categories",
+    "tags": "Tags",
+    "sharePost": "Share"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Our Mission",
+    "history": "Our History",
+    "team": "Our Team"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "accountCreated": "Account created successfully!"
+  },
+  "account": {
+    "orders": "My Orders",
+    "profile": "My Profile",
+    "addresses": "Addresses",
+    "wishlist": "Wishlist",
+    "logout": "Logout"
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "pt": "Português",
+    "en": "English"
+  }
+}
