@@ -4,12 +4,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleCart, openSearch } from "@/store/uiSlice";
 import { RootState } from "@/store";
 import { Search, User, ShoppingBag, Menu } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const [location] = useLocation();
   const { items } = useSelector((state: RootState) => state.cart);
+  const { t } = useTranslation();
 
   const cartItemCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -52,28 +55,28 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link href="/products/mens" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/mens') ? 'text-primary' : ''}`}>
-              Men
+              {t('header.mens')}
             </Link>
             <Link href="/products/womens" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/womens') ? 'text-primary' : ''}`}>
-              Women
+              {t('header.womens')}
             </Link>
             <Link href="/products/accessories" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/accessories') ? 'text-primary' : ''}`}>
-              Accessories
+              {t('header.accessories')}
             </Link>
-            <Link href="/products/hats" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/products/hats') ? 'text-primary' : ''}`}>
-              Hats
+            <Link href="/blog" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location.startsWith('/blog') ? 'text-primary' : ''}`}>
+              {t('header.blog')}
             </Link>
             <Link href="/about" className={`text-foreground hover:text-primary uppercase tracking-wider text-sm ${location === '/about' ? 'text-primary' : ''}`}>
-              About
+              {t('header.about')}
             </Link>
           </nav>
 
-          {/* Search, Account, Cart */}
+          {/* Search, Account, Cart, Language */}
           <div className="flex items-center space-x-4">
             <button 
               className="text-foreground hover:text-primary"
               onClick={() => dispatch({ type: 'ui/toggleSearch', payload: true })}
-              aria-label="Open search"
+              aria-label={t('header.search')}
             >
               <Search className="h-6 w-6" />
             </button>
@@ -91,6 +94,7 @@ export default function Header() {
                 </span>
               )}
             </button>
+            <LanguageSwitcher />
             <button 
               className="md:hidden text-foreground hover:text-primary"
               onClick={toggleMobileMenu}
@@ -106,20 +110,24 @@ export default function Header() {
         <div className="md:hidden" id="mobile-menu">
           <div className="px-4 pt-2 pb-4 space-y-3 bg-card border-t border-border">
             <Link href="/products/mens" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              Men
+              {t('header.mens')}
             </Link>
             <Link href="/products/womens" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              Women
+              {t('header.womens')}
             </Link>
             <Link href="/products/accessories" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              Accessories
+              {t('header.accessories')}
             </Link>
-            <Link href="/products/hats" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              Hats
+            <Link href="/blog" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
+              {t('header.blog')}
             </Link>
             <Link href="/about" className="block text-foreground hover:text-primary py-2 uppercase tracking-wider text-sm">
-              About
+              {t('header.about')}
             </Link>
+            <div className="flex items-center mt-2 border-t border-border pt-2">
+              <span className="text-sm text-muted-foreground mr-2">{t('language.selectLanguage')}:</span>
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}
