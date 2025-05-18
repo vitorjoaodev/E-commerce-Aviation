@@ -14,6 +14,8 @@ import Checkout from "@/pages/Checkout";
 import Account from "@/pages/Account";
 import About from "@/pages/About";
 import Admin from "@/pages/Admin";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import { loadCart } from "./store/cartSlice";
 
 function Router() {
@@ -27,6 +29,8 @@ function Router() {
         <Route path="/checkout" component={Checkout} />
         <Route path="/account" component={Account} />
         <Route path="/about" component={About} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/admin" component={Admin} />
         <Route component={NotFound} />
       </Switch>
