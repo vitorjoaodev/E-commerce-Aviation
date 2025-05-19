@@ -117,22 +117,16 @@ export class MemStorage implements IStorage {
         );
       }
       
-      // Produtos específicos para a categoria 'accessories'
+      // Produtos específicos para a categoria 'accessories' - apenas 3 produtos conforme solicitado
       if (category === 'accessories') {
-        const accessoriesProductIds = [12, 13, 14, 15, 16];
+        // Boeing Leather Zip Wallet, Beechcraft Cap, Boeing 3D Cap
+        const accessoriesProductIds = [12, 13, 14];
         return products.filter(product => 
           accessoriesProductIds.includes(product.id)
         );
       }
       
-      // Produtos específicos para a categoria 'hats'
-      if (category === 'hats') {
-        // Os chapéus são uma subcategoria de acessórios
-        const hatsProductIds = [13, 14, 15];
-        return products.filter(product => 
-          hatsProductIds.includes(product.id)
-        );
-      }
+      // Removemos a categoria 'hats' conforme solicitado
       
       // Para as demais categorias, filtro normal
       return products.filter(product => product.category === category);
