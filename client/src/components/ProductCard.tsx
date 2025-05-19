@@ -6,6 +6,7 @@ import { addItem } from "@/store/cartSlice";
 import { toggleCart } from "@/store/uiSlice";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@shared/schema";
+import { useProductTranslation } from "./ProductTranslation";
 
 interface ProductCardProps {
   product: Product;
@@ -14,19 +15,23 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const [isHovering, setIsHovering] = useState(false);
   const dispatch = useDispatch();
+  const { translateProduct } = useProductTranslation();
+  
+  // Traduz o produto conforme o idioma atual
+  const translatedProduct = translateProduct(product);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     
     dispatch(addItem({
-      id: product.id.toString(),
-      name: product.name,
-      price: product.price,
-      imageUrl: product.imageUrl,
+      id: translatedProduct.id.toString(),
+      name: translatedProduct.name,
+      price: translatedProduct.price,
+      imageUrl: translatedProduct.imageUrl,
       quantity: 1,
-      size: product.availableSizes ? product.availableSizes[0] : undefined,
-      color: product.availableColors ? product.availableColors[0] : undefined,
+      size: translatedProduct.availableSizes ? translatedProduct.availableSizes[0] : undefined,
+      color: translatedProduct.availableColors ? translatedProduct.availableColors[0] : undefined,
     }));
     
     dispatch(toggleCart(true));
