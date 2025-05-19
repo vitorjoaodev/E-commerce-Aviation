@@ -46,20 +46,20 @@ export default function ProductCard({ product }: ProductCardProps) {
           onMouseLeave={() => setIsHovering(false)}
         >
           <img 
-            src={product.imageUrl} 
-            alt={product.name} 
+            src={translatedProduct.imageUrl} 
+            alt={translatedProduct.name} 
             className={`w-full h-full object-cover transition-transform duration-500 ${isHovering ? 'scale-110' : 'scale-100'}`} 
           />
         </div>
         <div className="p-4">
           <h3 className="font-adventure text-lg text-foreground group-hover:text-primary transition-colors duration-300">
-            {product.name}
+            {translatedProduct.name}
           </h3>
-          <p className="text-muted-foreground text-sm mt-1">
-            {product.description}
+          <p className="text-muted-foreground text-sm mt-1 line-clamp-3">
+            {translatedProduct.description}
           </p>
           <div className="mt-4 flex justify-between items-center">
-            <span className="text-primary font-semibold">{formatPrice(product.price)}</span>
+            <span className="text-primary font-semibold">{formatPrice(translatedProduct.price)}</span>
             <button 
               className="bg-secondary hover:bg-primary text-white p-2 rounded-full transition-colors duration-300"
               onClick={handleAddToCart}
