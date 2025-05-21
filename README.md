@@ -1,6 +1,6 @@
 # 🛩️ Aviator Store - E-Commerce de Moda de Aviação
 
-![Banner](https://github.com/seu-usuario/aviator-store/blob/main/23_SNF_Sat325_Junkers_1110F.jpg)
+![Banner](https://raw.githubusercontent.com/vitorjoaodev/E-commerce-Aviation/main/Design%20sem%20nome%20(85).png)
 
 ## Sobre o Projeto
 
@@ -32,8 +32,8 @@
 - Acessível de acordo com diretrizes internacionais
 - **Integração com AWS** para performance e escalabilidade
 - **Implementação de SEO** técnico e on-page
-- **Exit Pop-Up** para conversão de visitantes
-- **Blog atualizado** com conteúdos de aviação, moda e aventuras
+- **Exit Pop-Up** para retenção de usuários
+- **Blog atualizado** com conteúdos sobre aviação, moda e estilo de vida
 
 ---
 
@@ -75,10 +75,10 @@
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/aviator-store.git
+git clone https://github.com/vitorjoaodev/E-commerce-Aviation.git
 
 # Acesse o diretório
-cd aviator-store
+cd E-commerce-Aviation
 
 # Instale as dependências
 npm install
